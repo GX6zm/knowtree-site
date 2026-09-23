@@ -308,14 +308,7 @@ export default function OITreeScene() {
     (grid.material as THREE.Material).opacity = 0.25;
     scene.add(grid);
 
-    /* particles */
-    const pGeo = new THREE.BufferGeometry();
-    const pN = 600;
-    const pPos = new Float32Array(pN * 3);
-    for (let i = 0; i < pN * 3; i++) pPos[i] = (Math.random() - 0.5) * 350;
-    pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-    const pMat = new THREE.PointsMaterial({ color: 0x2244aa, size: 0.35, transparent: true, opacity: 0.35 });
-    scene.add(new THREE.Points(pGeo, pMat));
+
 
     const rc = new THREE.Raycaster();
     const mouse = new THREE.Vector2(-999, -999);
